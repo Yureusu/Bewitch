@@ -247,12 +247,14 @@ export function renderHome(){
         });
     
         contractsBackBtn.addEventListener("click", () => {
+            content.style.height = "auto";
             content.style.justifyContent = "space-around";
             content.removeChild(witchWrapper);
             content.removeChild(topNav);
             renderHome();
         });
         contractsBackText.addEventListener("click", () => {
+            content.style.height = "auto";
             content.style.justifyContent = "space-around";
             content.removeChild(witchWrapper);
             content.removeChild(topNav);
