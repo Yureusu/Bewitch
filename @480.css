@@ -57,6 +57,7 @@
         padding-top: 12px;
         padding-bottom: 24px;
         font-size: var(--small-font-size);
+        margin-bottom: 48px;
     }
     #footer{
         padding: 12px;

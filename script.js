@@ -151,11 +151,13 @@ export function renderHome(){
         topNav.appendChild(catalogBackText);
     
         catalogBackBtn.addEventListener("click", () => {
+            content.style.height = "100vh";
             content.removeChild(spellWrapper);
             content.removeChild(topNav);
             renderHome();
         });
         catalogBackText.addEventListener("click", () => {
+            content.style.height = "100vh";
             content.removeChild(spellWrapper);
             content.removeChild(topNav);
             renderHome();
@@ -247,14 +249,14 @@ export function renderHome(){
         });
     
         contractsBackBtn.addEventListener("click", () => {
-            content.style.height = "auto";
+            content.style.height = "100vh";
             content.style.justifyContent = "space-around";
             content.removeChild(witchWrapper);
             content.removeChild(topNav);
             renderHome();
         });
         contractsBackText.addEventListener("click", () => {
-            content.style.height = "auto";
+            content.style.height = "100vh";
             content.style.justifyContent = "space-around";
             content.removeChild(witchWrapper);
             content.removeChild(topNav);
