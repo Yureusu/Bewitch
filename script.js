@@ -174,6 +174,7 @@ export function renderHome(){
         content.removeChild(introduction);
     
         topNav.style.justifyContent = "flex-start";
+        content.style.height = "auto";
     
         const contractsBackBtn = document.createElement("i");
         contractsBackBtn.setAttribute("id", "contracts-backbtn");
