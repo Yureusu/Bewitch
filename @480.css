@@ -86,7 +86,7 @@
     #spell-wrapper, #witch-wrapper{
         margin-block: 12px;
         gap: 12px;
-        justify-content: flex-start;
+        align-items: flex-start;
     }
     #witch-wrapper{
         height: 100vh;
