@@ -48,6 +48,7 @@
     #catalog, #contracts, #shop{
         height: 120px;
         width: 120px;
+        filter: brightness(100%);
     }
     #gamenav-info{
         display: none;
