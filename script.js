@@ -50,12 +50,11 @@ export function renderHome(){
     
     const introduction = document.createElement("p");
     introduction.setAttribute("id", "introduction");
-    introduction.textContent = `Oh my, you are cursed by witches, there's no going back now,
-                    you need to fight them one by one my friend, you can open the catalog
-                    to see all the spells you've unlocked so far and get familiarize with them,
-                    you can open the contracts to duel against the witches for you to be able to 
-                    lift all the curse, you can also buy stuff from the shop to help you with 
-                    your duels, that's all for now, goodluck my friend.`;
+    introduction.textContent = `Oh no, you've been cursed by witches! There's no turning back now—
+    you must face them one by one, my friend. You can open the catalog to review all the spells 
+    you've unlocked so far and get acquainted with them. Use the contracts to challenge the witches 
+    to duels in order to break the curse. Additionally, you can visit the shop to purchase items to aid you 
+    in your battles. That’s all for now—good luck, my friend!`;
     
     content.appendChild(topNav);
     topNav.appendChild(howtoPlay);

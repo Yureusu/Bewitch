@@ -172,16 +172,16 @@
         flex-wrap: wrap;
     }
     #card-wrapper{
-        height: 180px;
-        width: 120px;
+        height: 224px;
+        width: 154px;
     }
     #backface-img{
-        height: 180px;
-        width: 120px;
+        height: 224px;
+        width: 154px;
     }
     #frontface-img{
-        height: 180px;
-        width: 120px;
+        height: 224px;
+        width: 154px;
     }
     #player-info{
         padding-inline: 12px;
