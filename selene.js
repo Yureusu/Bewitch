@@ -291,12 +291,13 @@ function updateHealth(){
     if(player.health <= 0){
         alert("You have been defeated.");
         setTimeout(() => {
-            const content = document.getElementById("content");
-            content.style.height = "100vh";
-            content.style.justifyContent = "space-around";
-            const playField = document.getElementById("play-field");
-            content.removeChild(playField);
-            renderHome();
+            // const content = document.getElementById("content");
+            // content.style.height = "100vh";
+            // content.style.justifyContent = "space-around";
+            // const playField = document.getElementById("play-field");
+            // content.removeChild(playField);
+            // renderHome();
+            location.reload();
         }, 2000);  
     }
 }
@@ -322,12 +323,13 @@ function updateRound(){
     if(player.round == 11){
         alert("Selena has been defeated. You won!");
         setTimeout(() => {
-            const content = document.getElementById("content");
-            content.style.height = "100vh";
-            content.style.justifyContent = "space-around";
-            const playField = document.getElementById("play-field");
-            content.removeChild(playField);
-            renderHome();
+            // const content = document.getElementById("content");
+            // content.style.height = "100vh";
+            // content.style.justifyContent = "space-around";
+            // const playField = document.getElementById("play-field");
+            // content.removeChild(playField);
+            // renderHome();
+            location.reload();
         }, 2000); 
     }
 }
