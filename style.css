@@ -1,0 +1,533 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root{
+    --font-family: "Fredoka", sans-serif;
+    --small-font-size: 14px;
+    --normal-font-size: 18px;
+    --large-font-size: 24px;
+    --dark-bgcolor: #655D8A;
+    --light-bgcolor: #E2DFD0;
+    --header-color: #39375B;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#header{
+    height: 80px;
+    width: 100%;
+    background-color: var(--header-color);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    animation: fadeIn 0.6s ease forwards;
+    z-index: 1;
+}
+#header-icon{
+    height: 64px;
+    width: 64px;
+    margin-left: 24px;
+    animation: fadeIn 0.6s ease forwards;
+    cursor: pointer;
+    filter: brightness(90%);
+}
+#header-icon:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#header-title{
+    font-family: var(--font-family);
+    font-size: 42px;
+    color: #E2DFD0;
+    animation: fadeIn 0.6s ease forwards;
+    cursor: pointer;
+    font-weight: 600;
+}
+#header-space{
+    flex: 1;
+}
+#light-mode, #dark-mode{
+    height: 48px;
+    width: 48px;
+    margin-right: 24px;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+    filter: brightness(90%);
+}
+#light-mode:hover, #dark-mode:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#content{
+    padding-top: 80px;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--dark-bgcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 24px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#top-nav{
+    height: auto;
+    width: 96%;
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--light-bgcolor);
+    gap: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#howto-play, #stats, #coffee{
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    color: var(--light-bgcolor);
+    cursor: pointer;
+    text-transform: uppercase;
+    filter: brightness(80%);
+    animation: fadeIn 0.6s ease forwards;
+}
+#howto-play:hover, #stats:hover, #coffee:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#catalog-backbtn, #contracts-backbtn{
+    font-size: var(--normal-font-size);
+    color: var(--light-bgcolor);
+    animation: fadeIn 0.6s ease forwards;
+    cursor: pointer;
+}
+#catalog-backtext, #contracts-backtext{
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    color: var(--light-bgcolor);
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#tagline-wrapper{
+    padding: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.6s ease forwards;
+}
+#tag-line{
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    color: var(--light-bgcolor);
+    animation: fadeIn 0.6s ease forwards;
+}
+#game-nav{
+    height: auto;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-block: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#catalog, #contracts, #shop{
+    height: 180px;
+    width: 180px;
+    cursor: pointer;
+    filter: brightness(80%);
+    animation: fadeIn 0.6s ease forwards;
+}
+#catalog:hover, #contracts:hover, #shop:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#gamenav-info{
+    height: auto;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 364px;
+    margin-top: -32px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#catalog-title{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    padding-left: 180px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#contracts-title{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    padding-left: 4px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#shop-title{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    padding-left: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#introduction{
+    text-align: center;
+    padding: 24px;
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    animation: fadeIn 0.6s ease forwards;
+}
+#spell-wrapper, #witch-wrapper{
+    height: auto;
+    width: auto;
+    margin-block: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#spellimg-wrapper, #witchimg-wrapper{
+    height: 220px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 24px;
+    animation: fadeIn 0.6s ease forwards;
+    border: 2px solid var(--light-bgcolor);
+    border-radius: 12px;
+}
+#spell-img, #witch-img{
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+    filter: brightness(80%);
+    animation: fadeIn 0.6s ease forwards;
+}
+#spell-img:hover, #witch-img:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#spell-title, #witch-name{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    text-align: center;
+    width: 120px;
+    animation: fadeIn 0.6s ease forwards;
+}
+/*Selene*/
+#contract-wrapper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-block: 24px;
+    padding: 24px;
+    animation: fadeIn 0.6s ease forwards;
+    border: 2px solid white;
+    border-radius: 12px;
+    gap: 24px;
+}
+#contract-img{
+    height: 180px;
+    width: 180px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#contractinfo-wrapper{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    animation: fadeIn 0.6s ease forwards;
+    border-radius: 12px;
+}
+#contract-name{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--large-font-size);
+    animation: fadeIn 0.6s ease forwards;
+}
+#contract-info{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    animation: fadeIn 0.6s ease forwards;
+}
+#duel-btn{
+    padding: 12px;
+    border-radius: 24px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--header-color);
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    animation: fadeIn 0.6s ease forwards;
+}
+#duel-btn:hover{
+    color: var(--header-color);
+    background-color: var(--light-bgcolor);
+    transition: 0.3s ease-in-out;
+}
+#contractcards-wrapper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-inline: 24px;
+    gap: 24px;
+    border-radius: 24px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#contractcards-title{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--large-font-size);
+    animation: fadeIn 0.6s ease forwards;
+}
+#contractcardsimg-wrapper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#contractcards-img{
+    height: 240px;
+    width: 172px;
+    border-radius: 12px;
+    cursor: pointer;
+    filter: brightness(90%);
+    animation: fadeIn 0.6s ease forwards;
+}
+#contractcards-img:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+/*battle*/
+#play-field{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-block: 24px;
+    padding: 24px;
+    border: 2px solid var(--light-bgcolor);
+    border-radius: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#card-field{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 24px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#card-wrapper{
+    height: 320px;
+    width: 240px;
+    border-radius: 12px;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#card{
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: 0.6s ease;
+}
+#front-face, #back-face{
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 12px;
+}
+#front-face{
+    transform: rotateY(180deg);
+}
+#backface-img{
+    height: 320px;
+    width: 240px;
+    border-radius: 12px;
+}
+#frontface-img{
+    height: 320px;
+    width: 240px;
+    border-radius: 12px;
+}
+#player-info{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-block: 12px;
+    padding-inline: 112px;
+    background-color: var(--header-color);
+    border-radius: 12px;
+    gap: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#health-wrapper, #round-wrapper{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    animation: fadeIn 0.6s ease forwards;
+}
+#health-img, #round-img{
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+    margin: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#health-display, #round-display{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#prompt-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 80px;
+    flex: 1;
+    animation: fadeIn 0.6s ease forwards;
+}
+#prompt-text{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    padding: 12px;
+    animation: fadeIn 0.6s ease forwards;
+}
+/**/
+#footer{
+    height: auto;
+    width: 100%;
+    background-color: var(--header-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    animation: fadeIn 0.6s ease forwards;
+}
+#footer-info{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+#bewitch-game{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+#bewitch-game img{
+    height: 64px;
+    width: 64px;
+}
+#bewitch-game h1{
+    color: #E2DFD0;
+    font-family: var(--font-family);
+    font-size: 32px;
+}
+#bewitch-info{
+    color: #E2DFD0;
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+}
+#footer-nav{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-top: 24px;
+}
+#copyright{
+    color: #E2DFD0;
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    flex: 1;
+}
+#socials{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+}
+#socials i{
+    color: #E2DFD0;
+    font-size: 28px;
+    cursor: pointer;
+}

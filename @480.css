@@ -1,0 +1,200 @@
+@media screen and (max-width: 480px) {
+    #header{
+        height: 40px;
+        gap: 12px;
+        padding-block: 24px;
+    }
+    #header-icon{
+        height: 32px;
+        width: 32px;
+        margin-left: 12px;
+    }
+    #header-title{
+        font-size: 28px;
+    }
+    #light-mode{
+        height: 28px;
+        width: 28px;
+        margin-right: 12px;
+    }
+    #content{
+        height: auto;
+        padding-top: 40px;
+        padding-inline: 12px;
+    }
+    #top-nav{
+        padding-inline: 12px;
+        padding-top: 24px;
+        padding-bottom: 12px;
+    }
+    #howto-play, #stats, #coffee{
+        font-size: var(--small-font-size);
+        text-transform: capitalize;
+    }
+    #tagline-wrapper{
+        padding: 12px;
+    }
+    #tag-line{
+        font-size: var(--small-font-size);
+        text-align: center;
+    }
+    #game-nav{
+        flex-direction: column;
+        gap: 24px;
+    }
+    #catalog, #contracts, #shop{
+        height: 120px;
+        width: 120px;
+    }
+    #gamenav-info{
+        display: none;
+    }
+    #introduction{
+        padding-top: 12px;
+        padding-bottom: 24px;
+        font-size: var(--small-font-size);
+    }
+    #footer{
+        padding: 12px;
+        gap: 24px;
+    }
+    #footer-info{
+        justify-content: center;
+    }
+    #bewitch-game img{
+        height: 32px;
+        width: 32px;
+    }
+    #bewitch-game h1{
+        font-size: var(--large-font-size);
+    }
+    #bewitch-info{
+        font-size: var(--small-font-size);
+    }
+    #footer-nav{
+        padding-top: 12px;
+    }
+    #copyright{
+        font-size: var(--small-font-size);
+    }
+    #socials{
+        gap: 12px;
+    }
+    #socials i{
+        font-size: var(--normal-font-size);
+    }
+    #spell-wrapper, #witch-wrapper{
+        margin-block: 12px;
+        gap: 12px;
+    }
+    #spellimg-wrapper, #witchimg-wrapper{
+        height: 148px;
+        padding: 12px;
+    }
+    #spell-img, #witch-img{
+        height: 80px;
+        width: 80px;
+    }
+    #spell-title, #witch-name{
+        font-size: var(--small-font-size);
+        width: 80px;
+    }
+    #catalog-backbtn, #contracts-backbtn{
+        font-size: var(--small-font-size);
+    }
+    #catalog-backtext, #contracts-backtext{
+        font-size: var(--small-font-size);
+    }
+    /*Selene*/
+    #contract-wrapper{
+        flex-direction: column;
+        margin-block: 12px;
+        padding: 12px;
+        gap: 12px;
+    }
+    #contract-img{
+        height: 120px;
+        width: 120px;
+    }
+    #contractinfo-wrapper{
+        gap: 12px;
+        align-items: center;
+    }
+    #contract-name{
+        font-size: var(--normal-font-size);
+    }
+    #contract-info{
+        font-size: var(--small-font-size);
+        text-align: center;
+    }
+    #duel-btn{
+        padding: 8px;
+        border-radius: 24px;
+        width: 80px;
+        text-align: center;
+        cursor: pointer;
+        font-size: var(--small-font-size);
+    }
+    #contractcards-wrapper{
+        padding-inline: 12px;
+        gap: 12px;
+        border-radius: 24px;
+        margin-bottom: 12px;
+    }
+    #contractcards-title{
+        font-size: var(--normal-font-size);
+    }
+    #contractcardsimg-wrapper{
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+    #contractcards-img{
+        height: 180px;
+        width: 132px;
+    }
+    #contractcards-img:hover{
+        filter: brightness(100%);
+        transition: 0.3s ease-in-out;
+    }
+    /*battle*/
+    #play-field{
+        margin-block: 24px;
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+    #card-field{
+        padding: 12px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    #card-wrapper{
+        height: 180px;
+        width: 120px;
+    }
+    #backface-img{
+        height: 180px;
+        width: 120px;
+    }
+    #frontface-img{
+        height: 180px;
+        width: 120px;
+    }
+    #player-info{
+        padding-inline: 12px;
+    }
+    #health-img, #round-img{
+        height: 18px;
+        width: 18px;
+    }
+    #health-display, #round-display{
+        font-size: var(--small-font-size);
+    }
+    #prompt-wrapper{
+        height: 40px;
+        flex: 1;
+    }
+    #prompt-text{
+        font-size: var(--small-font-size);
+    }
+}
