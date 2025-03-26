@@ -86,10 +86,9 @@
     #spell-wrapper, #witch-wrapper{
         margin-block: 12px;
         gap: 12px;
-        align-items: flex-start;
     }
     #witch-wrapper{
-        height: 100vh;
+        height: auto;
     }
     #spellimg-wrapper, #witchimg-wrapper{
         height: 148px;
@@ -173,16 +172,16 @@
         flex-wrap: wrap;
     }
     #card-wrapper{
-        height: 224px;
-        width: 154px;
+        height: 180px;
+        width: 132px;
     }
     #backface-img{
-        height: 224px;
-        width: 154px;
+        height: 180px;
+        width: 132px;
     }
     #frontface-img{
-        height: 224px;
-        width: 154px;
+        height: 180px;
+        width: 132px;
     }
     #player-info{
         padding-inline: 12px;
