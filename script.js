@@ -151,13 +151,13 @@ export function renderHome(){
         topNav.appendChild(catalogBackText);
     
         catalogBackBtn.addEventListener("click", () => {
-            content.style.height = "100vh";
+            content.style.height = "auto";
             content.removeChild(spellWrapper);
             content.removeChild(topNav);
             renderHome();
         });
         catalogBackText.addEventListener("click", () => {
-            content.style.height = "100vh";
+            content.style.height = "auto";
             content.removeChild(spellWrapper);
             content.removeChild(topNav);
             renderHome();
