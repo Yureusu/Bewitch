@@ -8,14 +8,16 @@
         height: 32px;
         width: 32px;
         margin-left: 12px;
+        filter: brightness(100%);
     }
     #header-title{
         font-size: 28px;
     }
-    #light-mode{
+    #light-mode, #dark-mode{
         height: 28px;
         width: 28px;
         margin-right: 12px;
+        filter: brightness(100%);
     }
     #content{
         height: auto;
@@ -30,6 +32,7 @@
     #howto-play, #stats, #coffee{
         font-size: var(--small-font-size);
         text-transform: capitalize;
+        filter: brightness(100%);
     }
     #tagline-wrapper{
         padding: 12px;
@@ -97,6 +100,7 @@
     #spell-img, #witch-img{
         height: 80px;
         width: 80px;
+        filter: brightness(100%);
     }
     #spell-title, #witch-name{
         font-size: var(--small-font-size);
