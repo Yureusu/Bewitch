@@ -87,6 +87,9 @@
         margin-block: 12px;
         gap: 12px;
     }
+    #witch-wrapper{
+        height: 100vh;
+    }
     #spellimg-wrapper, #witchimg-wrapper{
         height: 148px;
         padding: 12px;
