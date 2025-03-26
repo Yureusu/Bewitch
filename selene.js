@@ -321,7 +321,7 @@ function updateRound(){
     roundWrapper.appendChild(displayRound);
 
     if(player.round == 11){
-        alert("Selena has been defeated. You won!");
+        alert("Selene has been defeated. You won!");
         setTimeout(() => {
             // const content = document.getElementById("content");
             // content.style.height = "100vh";
