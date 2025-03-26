@@ -4,7 +4,7 @@ export function renderSelene(){
     renderHome();
 
     const content = document.getElementById("content");
-    content.style.height = "100vh";
+    content.style.height = "auto";
     content.innerHTML = "";
 
     const topNav = document.createElement("div");
