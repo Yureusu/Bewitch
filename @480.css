@@ -213,8 +213,8 @@
     }
     #close-popup-btn{
         font-size: 24px;
-        margin-top: -20px;
-        margin-right: -22px;
+        margin-top: -16px;
+        margin-right: -18px;
         filter: brightness(100%);
     }
     #victory-img, #defeat-img{
