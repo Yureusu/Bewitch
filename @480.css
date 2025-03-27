@@ -218,16 +218,16 @@
         filter: brightness(100%);
     }
     #victory-img, #defeat-img{
-        height: 240px;
-        width: 240px;
+        height: 180px;
+        width: 180px;
         margin: 12px;
     }
     #victory-text{
         width: 100%;
-        font-size: var(--normal-font-size);
+        font-size: var(--large-font-size);
     }
     #defeat-text{
         width: 100%;
-        font-size: var(--normal-font-size);
+        font-size: var(--large-font-size);
     }
 }
