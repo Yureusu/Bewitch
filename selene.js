@@ -406,3 +406,87 @@ function defeatPopup(){
         location.reload();
     });
 }
+
+const bagCounter = {
+    potion: 20
+}
+
+function renderBag(){
+    const bagWrapper = document.createElement("div");
+    bagWrapper.setAttribute("id", "bag-wrapper");
+
+    const content = document.getElementById("content");
+    content.appendChild(bagWrapper);
+
+    const bagImg = document.createElement("img");
+    bagImg.setAttribute("id", "bag-img");
+    bagImg.src = "assets/img/bag.png";
+
+    bagWrapper.appendChild(bagImg);
+
+    const potionArr = [];
+
+    Object.keys(bagCounter).forEach(key => {
+        const numberOfPotion = bagCounter[key];
+        for(let i = 1; i <= numberOfPotion; i++){
+            potionArr.push(`Potion${i}`);
+        }
+    });
+
+    console.log(potionArr);
+
+    const healthPotionWrapper = document.createElement("div");
+    healthPotionWrapper.setAttribute("id", "health-potion-wrapper");
+    bagWrapper.appendChild(healthPotionWrapper);
+
+    if(bagCounter.potion != 0){
+        potionArr.forEach((index) => {
+            const healthPotion = document.createElement("div");
+            healthPotion.setAttribute("id", "health-potion");
+
+            const healthPotionImg = document.createElement("img");
+            healthPotionImg.setAttribute("id", "health-potion-img");
+            healthPotionImg.src = "assets/img/health-potion.png";
+            healthPotionImg.setAttribute("name", index);
+            
+            healthPotionWrapper.appendChild(healthPotion);
+            healthPotion.appendChild(healthPotionImg);
+
+            healthPotion.addEventListener("click", (event) => {
+                // const targetPotion = event.target.getAttribute("name");
+                // alert(targetPotion);
+                const useBtn = document.createElement("span");
+                useBtn.setAttribute("id", "use-btn");
+                useBtn.textContent = "Use";
+
+                healthPotion.appendChild(useBtn);
+
+                useBtn.addEventListener("click", () => {
+                    const playerInfo = document.getElementById("player-info");
+
+                    const healthWrapper = document.getElementById("health-wrapper");
+                    playerInfo.removeChild(healthWrapper); 
+                    const roundWrapper = document.getElementById("round-wrapper");
+                    playerInfo.removeChild(roundWrapper);
+                    const promptWrapper = document.getElementById("prompt-wrapper");
+                    playerInfo.removeChild(promptWrapper); 
+
+                    player.health += 1;
+                    updateHealth();
+                    updateRound();
+                    player.prompt = "Health Potion: Gain 1 heart.";
+                    updatePrompt();
+                    const deletePotion = potionArr[0];
+                    healthPotion.remove(deletePotion);
+                });
+            });
+        });
+    }
+    else{
+        const bagText = document.createElement("p");
+        bagText.setAttribute("id", "bag-text");
+        bagText.textContent = "Your bag is empty.";
+
+        bagWrapper.appendChild(bagText);
+    }
+}
