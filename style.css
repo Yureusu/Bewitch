@@ -71,7 +71,7 @@
 }
 #content{
     padding-top: 80px;
-    height: 100vh;
+    height: auto;
     width: 100%;
     background-color: var(--dark-bgcolor);
     display: flex;
@@ -145,6 +145,16 @@
     margin-block: 12px;
     animation: fadeIn 0.6s ease forwards;
 }
+#gamenav-catalog, #gamenav-contracts, #gamenav-shop{
+    height: auto;
+    width: auto;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+} 
 #catalog, #contracts, #shop{
     height: 180px;
     width: 180px;
@@ -156,37 +166,25 @@
     filter: brightness(100%);
     transition: 0.3s ease-in-out;
 }
-#gamenav-info{
-    height: auto;
-    width: 100%;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 364px;
-    margin-top: -32px;
-    animation: fadeIn 0.6s ease forwards;
-}
 #catalog-title{
     color: var(--light-bgcolor);
     font-family: var(--font-family);
     font-size: var(--normal-font-size);
-    padding-left: 180px;
+    cursor: pointer;
     animation: fadeIn 0.6s ease forwards;
 }
 #contracts-title{
     color: var(--light-bgcolor);
     font-family: var(--font-family);
     font-size: var(--normal-font-size);
-    padding-left: 4px;
+    cursor: pointer;
     animation: fadeIn 0.6s ease forwards;
 }
 #shop-title{
     color: var(--light-bgcolor);
     font-family: var(--font-family);
     font-size: var(--normal-font-size);
-    padding-left: 12px;
+    cursor: pointer;
     animation: fadeIn 0.6s ease forwards;
 }
 #introduction{
@@ -457,6 +455,55 @@
     cursor: pointer;
     padding: 12px;
     animation: fadeIn 0.6s ease forwards;
+}
+#victory-popup-wrapper, #defeat-popup-wrapper{
+    height: 460px;
+    width: 460px;
+    background-color: var(--light-bgcolor);
+    z-index: 1;
+    border-radius: 12px 0px 12px 12px;
+    padding: 24px;
+    position: absolute;
+    top: 132px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 0px 100vmax rgb(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease forwards;
+}
+#close-popup-btn{
+    font-size: 32px;
+    color: var(--header-color);
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-top: -34px;
+    margin-right: -34px;
+    cursor: pointer;
+    filter: brightness(80%);
+}
+#close-popup-btn:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#victory-img, #defeat-img{
+    height: 240px;
+    width: 240px;
+    margin: 24px;
+}
+#victory-text{
+    width: 100%;
+    text-align: center;
+    color: var(--header-color);
+    font-family: var(--font-family);
+    font-size: 32px;
+}
+#defeat-text{
+    width: 90%;
+    text-align: center;
+    color: var(--header-color);
+    font-family: var(--font-family);
+    font-size: 32px;
 }
 /**/
 #footer{

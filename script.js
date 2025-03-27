@@ -23,20 +23,26 @@ export function renderHome(){
     const gameNav = document.createElement("div");
     gameNav.setAttribute("id", "game-nav");
 
+    const gameNavCatalog = document.createElement("div");
+    gameNavCatalog.setAttribute("id", "gamenav-catalog");
+
     const catalog = document.createElement("img");
     catalog.setAttribute("id", "catalog");
     catalog.src = "assets/img/catalog.png";
+
+    const gameNavContracts = document.createElement("div");
+    gameNavContracts.setAttribute("id", "gamenav-contracts");
 
     const contracts = document.createElement("img");
     contracts.setAttribute("id", "contracts");
     contracts.src = "assets/img/contracts.png";
 
+    const gameNavShop = document.createElement("div");
+    gameNavShop.setAttribute("id", "gamenav-shop");
+
     const shop = document.createElement("img");
     shop.setAttribute("id", "shop");
     shop.src = "assets/img/shop.png";
-
-    const gameNavInfo = document.createElement("div");
-    gameNavInfo.setAttribute("id", "gamenav-info");
     
     const catalogTitle = document.createElement("p");
     catalogTitle.setAttribute("id", "catalog-title");
@@ -63,20 +69,22 @@ export function renderHome(){
     content.appendChild(tagLineWrapper);
     tagLineWrapper.appendChild(tagLine);
     content.appendChild(gameNav);
-    gameNav.appendChild(catalog);
-    gameNav.appendChild(contracts);
-    gameNav.appendChild(shop);
-    content.appendChild(gameNavInfo);
-    gameNavInfo.appendChild(catalogTitle);
-    gameNavInfo.appendChild(contractsTitle);
-    gameNavInfo.appendChild(shopTitle);
+    gameNav.appendChild(gameNavCatalog);
+    gameNavCatalog.appendChild(catalog);
+    gameNav.appendChild(gameNavContracts);
+    gameNavContracts.appendChild(contracts);
+    gameNav.appendChild(gameNavShop);
+    gameNavShop.appendChild(shop);
+    gameNavCatalog.appendChild(catalogTitle);
+    gameNavContracts.appendChild(contractsTitle);
+    gameNavShop.appendChild(shopTitle);
     content.appendChild(introduction);
 
-    catalog.addEventListener("click", () => {
+    gameNavCatalog.addEventListener("click", () => {
         renderCatalog();
     });
 
-    contracts.addEventListener("click", () => {
+    gameNavContracts.addEventListener("click", () => {
         renderContracts();
     });
 
@@ -86,7 +94,6 @@ export function renderHome(){
         topNav.removeChild(coffee);
         content.removeChild(tagLineWrapper);
         content.removeChild(gameNav);
-        content.removeChild(gameNavInfo);
         content.removeChild(introduction);
     
         topNav.style.justifyContent = "flex-start";
@@ -151,13 +158,13 @@ export function renderHome(){
         topNav.appendChild(catalogBackText);
     
         catalogBackBtn.addEventListener("click", () => {
-            content.style.height = "100vh";
+            content.style.height = "auto";
             content.removeChild(spellWrapper);
             content.removeChild(topNav);
             renderHome();
         });
         catalogBackText.addEventListener("click", () => {
-            content.style.height = "100vh";
+            content.style.height = "auto";
             content.removeChild(spellWrapper);
             content.removeChild(topNav);
             renderHome();
@@ -170,7 +177,6 @@ export function renderHome(){
         topNav.removeChild(coffee);
         content.removeChild(tagLineWrapper);
         content.removeChild(gameNav);
-        content.removeChild(gameNavInfo);
         content.removeChild(introduction);
     
         topNav.style.justifyContent = "flex-start";
@@ -249,14 +255,14 @@ export function renderHome(){
         });
     
         contractsBackBtn.addEventListener("click", () => {
-            content.style.height = "100vh";
+            content.style.height = "auto";
             content.style.justifyContent = "space-around";
             content.removeChild(witchWrapper);
             content.removeChild(topNav);
             renderHome();
         });
         contractsBackText.addEventListener("click", () => {
-            content.style.height = "100vh";
+            content.style.height = "auto";
             content.style.justifyContent = "space-around";
             content.removeChild(witchWrapper);
             content.removeChild(topNav);

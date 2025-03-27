@@ -112,7 +112,7 @@ const player = {
 }
 
 function duelSelene(){
-    content.style.height = "100vh";
+    content.style.height = "auto";
     const contractWrapper = document.getElementById("contract-wrapper");
     content.removeChild(contractWrapper);
     const contractCardsWrapper = document.getElementById("contractcards-wrapper");
@@ -289,16 +289,7 @@ function updateHealth(){
     healthWrapper.appendChild(displayHealth);
 
     if(player.health <= 0){
-        alert("You have been defeated.");
-        setTimeout(() => {
-            // const content = document.getElementById("content");
-            // content.style.height = "100vh";
-            // content.style.justifyContent = "space-around";
-            // const playField = document.getElementById("play-field");
-            // content.removeChild(playField);
-            // renderHome();
-            location.reload();
-        }, 2000);  
+        defeatPopup(); 
     }
 }
 
@@ -321,16 +312,7 @@ function updateRound(){
     roundWrapper.appendChild(displayRound);
 
     if(player.round == 11){
-        alert("Selene has been defeated. You won!");
-        setTimeout(() => {
-            // const content = document.getElementById("content");
-            // content.style.height = "100vh";
-            // content.style.justifyContent = "space-around";
-            // const playField = document.getElementById("play-field");
-            // content.removeChild(playField);
-            // renderHome();
-            location.reload();
-        }, 2000); 
+        victoryPopup(); 
     }
 }
 
@@ -354,4 +336,68 @@ function shuffleArray(array) {
       [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
     }
     return array;
+}
+
+function victoryPopup(){
+    const victoryPopupWrapper = document.createElement("div");
+    victoryPopupWrapper.setAttribute("id", "victory-popup-wrapper");
+
+    const closePopupBtn = document.createElement("i");
+    closePopupBtn.setAttribute("id", "close-popup-btn");
+    closePopupBtn.setAttribute("class", "fa-solid fa-circle-xmark");
+
+    const victoryImgArr = [
+        "assets/victory/victory-one.png", "assets/victory/victory-two.png"
+    ]
+
+    const shuffledVictoryImg = shuffleArray(victoryImgArr);
+
+    const victoryImg = document.createElement("img");
+    victoryImg.setAttribute("id", "victory-img");
+    victoryImg.src = shuffledVictoryImg[0];
+
+    const victoryText = document.createElement("p");
+    victoryText.setAttribute("id", "victory-text");
+    victoryText.textContent = `Selene has been defeated. You won!`;
+
+    content.appendChild(victoryPopupWrapper);
+    victoryPopupWrapper.appendChild(closePopupBtn);
+    victoryPopupWrapper.appendChild(victoryImg);
+    victoryPopupWrapper.appendChild(victoryText);
+
+    closePopupBtn.addEventListener("click", () => {
+        location.reload();
+    });
+}
+
+function defeatPopup(){
+    const defeatPopupWrapper = document.createElement("div");
+    defeatPopupWrapper.setAttribute("id", "defeat-popup-wrapper");
+
+    const closePopupBtn = document.createElement("i");
+    closePopupBtn.setAttribute("id", "close-popup-btn");
+    closePopupBtn.setAttribute("class", "fa-solid fa-circle-xmark");
+
+    const defeatImgArr = [
+        "assets/defeat/defeat-one.png", "assets/defeat/defeat-two.png"
+    ]
+
+    const shuffledDefeatImg = shuffleArray(defeatImgArr);
+
+    const defeatImg = document.createElement("img");
+    defeatImg.setAttribute("id", "defeat-img");
+    defeatImg.src = shuffledDefeatImg[0];
+
+    const defeatText = document.createElement("p");
+    defeatText.setAttribute("id", "defeat-text");
+    defeatText.textContent = `You have been defeated. You lost!`;
+
+    content.appendChild(defeatPopupWrapper);
+    defeatPopupWrapper.appendChild(closePopupBtn);
+    defeatPopupWrapper.appendChild(defeatImg);
+    defeatPopupWrapper.appendChild(defeatText);
+
+    closePopupBtn.addEventListener("click", () => {
+        location.reload();
+    });
 }

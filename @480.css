@@ -50,8 +50,8 @@
         width: 120px;
         filter: brightness(100%);
     }
-    #gamenav-info{
-        display: none;
+    #catalog-title, #contracts-title, #shop-title{
+        font-size: var(--small-font-size);
     }
     #introduction{
         padding-top: 12px;
@@ -205,5 +205,30 @@
     }
     #prompt-text{
         font-size: var(--small-font-size);
+    }
+    #victory-popup-wrapper, #defeat-popup-wrapper{
+        height: 240px;
+        width: 240px;
+        padding: 12px;
+        top: 132px;
+    }
+    #close-popup-btn{
+        font-size: 24px;
+        margin-top: -20px;
+        margin-right: -20px;
+        filter: brightness(100%);
+    }
+    #victory-img, #defeat-img{
+        height: 120px;
+        width: 120px;
+        margin: 12px;
+    }
+    #victory-text{
+        width: 100%;
+        font-size: var(--normal-font-size);
+    }
+    #defeat-text{
+        width: 100%;
+        font-size: var(--normal-font-size);
     }
 }
