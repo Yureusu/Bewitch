@@ -289,7 +289,9 @@ function updateHealth(){
     healthWrapper.appendChild(displayHealth);
 
     if(player.health <= 0){
-        defeatPopup(); 
+        setTimeout(() => {
+            defeatPopup();
+        }, 2000);
     }
 }
 
@@ -312,7 +314,9 @@ function updateRound(){
     roundWrapper.appendChild(displayRound);
 
     if(player.round == 11){
-        victoryPopup(); 
+        setTimeout(() => {
+            victoryPopup();
+        }, 2000);
     }
 }
 
