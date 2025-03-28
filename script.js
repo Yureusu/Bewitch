@@ -12,7 +12,7 @@ export function renderHome(){
     howtoPlay.textContent = "Tutorial";
     const stats = document.createElement("span");
     stats.setAttribute("id", "stats");
-    stats.textContent = "Statistics";
+    stats.textContent = "Achievements";
     const coffee = document.createElement("span");
     coffee.setAttribute("id", "coffee");
     coffee.textContent = "Donate";
@@ -22,7 +22,7 @@ export function renderHome(){
     
     const tagLine = document.createElement("p");
     tagLine.setAttribute("id", "tag-line");
-    tagLine.textContent = `"Luck is your guide, strategy is your edge, and magic is your fate."`;
+    tagLine.textContent = `"Magic is your guide, strategy is your edge, and luck is your fate."`;
 
     const gameNav = document.createElement("div");
     gameNav.setAttribute("id", "game-nav");
@@ -60,11 +60,11 @@ export function renderHome(){
     
     const introduction = document.createElement("p");
     introduction.setAttribute("id", "introduction");
-    introduction.textContent = `Oh no, you've been cursed by witches! There's no turning back now—
-    you must face them one by one, my friend. You can open the catalog to review all the spells 
-    you've unlocked so far and get acquainted with them. Use the contracts to challenge the witches 
-    to duels in order to break the curse. Additionally, you can visit the shop to purchase items to aid you 
-    in your battles. That’s all for now—good luck, my friend!`;
+    introduction.textContent = `In a world where the threads of magic weave reality itself, 
+    witches reign supreme. Each commands unique and powerful spells, their knowledge passed down 
+    through secret rituals and dangerous pacts. Yet, deep within the arcane archives, 
+    whispers speak of a legendary magic—the ultimate force that could crown its wielder as 
+    the greatest sorcerer of all time.`;
     
     content.appendChild(topNav);
     topNav.appendChild(howtoPlay);
@@ -450,6 +450,10 @@ export function renderPlayerBag(){
         }
 
         potionArr.forEach(() => {
+            if(potionCounter >= 17){
+                inventoryWrapper.style.paddingLeft = "24px";
+                inventoryWrapper.style.overflowY = "scroll";
+            }
             const inventoryPotionImg = document.createElement("img");
             inventoryPotionImg.setAttribute("id", "inventory-potion-img");
             inventoryPotionImg.src = "assets/img/health-potion.png";

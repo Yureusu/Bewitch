@@ -14,13 +14,13 @@
         font-size: 28px;
     }
     #player-bag{
-        height: 28px;
-        width: 28px;
+        height: 32px;
+        width: 32px;
         filter: brightness(100%);
     }
     #light-mode, #dark-mode{
-        height: 28px;
-        width: 28px;
+        height: 32px;
+        width: 32px;
         margin-right: 12px;
         filter: brightness(100%);
     }
@@ -170,9 +170,32 @@
         filter: brightness(100%);
         transition: 0.3s ease-in-out;
     }
+    /*duel*/
+    #duel-popup-wrapper{
+        height: 300px;
+        width: 300px;
+        padding: 12px;
+        top: 132px;
+        gap: 12px;
+    }
+    #duel-img{
+        height: 160px;
+        width: 160px;
+    }
+    #duel-reward-title{
+        font-size: var(--normal-font-size);
+    }
+    #duel-play-btn{
+        font-size: 12px;
+        padding: 8px;
+        width: 80px;
+        text-align: center;
+        border-radius: 24px;
+        cursor: pointer;
+    }
     /*battle*/
     #play-field{
-        margin-block: 24px;
+        margin-block: 12px;
         padding: 12px;
         flex-wrap: wrap;
     }
@@ -218,22 +241,37 @@
     }
     #close-popup-btn{
         font-size: 24px;
-        margin-top: -16px;
-        margin-right: -18px;
+        margin-top: -20px;
+        margin-right: -20px;
         filter: brightness(100%);
     }
     #victory-img, #defeat-img{
-        height: 160px;
-        width: 160px;
+        height: 140px;
+        width: 140px;
         margin: 12px;
     }
-    #victory-text{
+    #victory-text, #defeat-text{
         width: 100%;
         font-size: var(--large-font-size);
     }
-    #defeat-text{
-        width: 100%;
-        font-size: var(--large-font-size);
+    #victory-reward-wrapper, #defeat-reward-wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-right: 12px;
+        gap: 12px;
+        margin-top: 12px;
+    }
+    #victory-reward-text, #defeat-reward-text{
+        color: var(--header-color);
+        font-family: var(--font-family);
+        font-size: var(--normal-font-size);
+        font-weight: 500;
+    }
+    #victory-reward-img, #defeat-reward-img{
+        height: 24px;
+        width: 24px;
     }
     #bag-wrapper{
         gap: 12px;

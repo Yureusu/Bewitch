@@ -85,12 +85,11 @@ export function renderSelene(){
     });
 
     duelBtn.addEventListener("click", () => {
-        alert("Duel Selene");
-        duelSelene();
+        duelPopup();
     });
 
     catalogBackBtn.addEventListener("click", () => {
-        content.style.height = "100vh";
+        content.style.height = "auto";
         content.style.justifyContent = "space-around";
         content.removeChild(contractWrapper);
         content.removeChild(contractCardsWrapper);
@@ -98,7 +97,7 @@ export function renderSelene(){
         renderHome();
     });
     catalogBackText.addEventListener("click", () => {
-        content.style.height = "100vh";
+        content.style.height = "auto";
         content.style.justifyContent = "space-around";
         content.removeChild(contractWrapper);
         content.removeChild(contractCardsWrapper);
@@ -367,10 +366,47 @@ function victoryPopup(){
     victoryText.setAttribute("id", "victory-text");
     victoryText.textContent = `Selene has been defeated. You won!`;
 
+    const victoryRewardWrapper = document.createElement("div");
+    victoryRewardWrapper.setAttribute("id", "victory-reward-wrapper");
+
+    const victoryRewardText = document.createElement("p");
+    victoryRewardText.setAttribute("id", "victory-reward-text");
+    victoryRewardText.textContent = `You got: `;    
+
+    const victoryRewardPentacleAmount = document.createElement("p");
+    victoryRewardPentacleAmount.setAttribute("id", "victory-reward-text");
+    victoryRewardPentacleAmount.textContent = "1"; 
+
+    const victoryRewardPentacle = document.createElement("img");
+    victoryRewardPentacle.setAttribute("id", "victory-reward-img");
+    victoryRewardPentacle.src = "assets/img/pentacle.png";
+
+    const victoryRewardPotionAmount = document.createElement("p");
+    victoryRewardPotionAmount.setAttribute("id", "victory-reward-text");
+    victoryRewardPotionAmount.textContent = "1"; 
+
+    const victoryRewardPotion = document.createElement("img");
+    victoryRewardPotion.setAttribute("id", "victory-reward-img");
+    victoryRewardPotion.src = "assets/img/health-potion.png";
+
     content.appendChild(victoryPopupWrapper);
     victoryPopupWrapper.appendChild(closePopupBtn);
     victoryPopupWrapper.appendChild(victoryImg);
     victoryPopupWrapper.appendChild(victoryText);
+
+    victoryPopupWrapper.appendChild(victoryRewardWrapper);
+    victoryRewardWrapper.appendChild(victoryRewardText);
+    victoryRewardWrapper.appendChild(victoryRewardPentacleAmount);
+    victoryRewardWrapper.appendChild(victoryRewardPentacle);
+    victoryRewardWrapper.appendChild(victoryRewardPotionAmount);
+    victoryRewardWrapper.appendChild(victoryRewardPotion);
+
+    const incPentacle = getValue().pentacle += 1;
+    const incPotion = getValue().potion += 1;
+    setValue({
+        pentacle: incPentacle,
+        potion: incPotion
+    });
 
     closePopupBtn.addEventListener("click", () => {
         content.removeChild(victoryPopupWrapper);
@@ -406,10 +442,37 @@ function defeatPopup(){
     defeatText.setAttribute("id", "defeat-text");
     defeatText.textContent = `You have been defeated. You lost!`;
 
+    const defeatRewardWrapper = document.createElement("div");
+    defeatRewardWrapper.setAttribute("id", "defeat-reward-wrapper");
+    
+    const defeatRewardText = document.createElement("p");
+    defeatRewardText.setAttribute("id", "defeat-reward-text");
+    defeatRewardText.textContent = `Selene took: `;    
+
+    const defeatRewardPentacleAmount = document.createElement("p");
+    defeatRewardPentacleAmount.setAttribute("id", "defeat-reward-text");
+    defeatRewardPentacleAmount.textContent = "1"; 
+
+    const defeatRewardPentacle = document.createElement("img");
+    defeatRewardPentacle.setAttribute("id", "defeat-reward-img");
+    defeatRewardPentacle.src = "assets/img/pentacle.png";
+
     content.appendChild(defeatPopupWrapper);
     defeatPopupWrapper.appendChild(closePopupBtn);
     defeatPopupWrapper.appendChild(defeatImg);
     defeatPopupWrapper.appendChild(defeatText);
+
+    defeatPopupWrapper.appendChild(defeatRewardWrapper);
+    defeatRewardWrapper.appendChild(defeatRewardText);
+    defeatRewardWrapper.appendChild(defeatRewardPentacleAmount);
+    defeatRewardWrapper.appendChild(defeatRewardPentacle);
+
+    if(!(getValue().pentacle == 0)){
+        const decPentacle = getValue().pentacle -= 1;
+        setValue({
+            pentacle: decPentacle
+        });
+    }
 
     closePopupBtn.addEventListener("click", () => {
         player.health = 10;
@@ -509,4 +572,62 @@ function renderBag(){
             });
         });
     }
+}
+
+function duelPopup(){
+    const duelPopupWrapper = document.createElement("div");
+    duelPopupWrapper.setAttribute("id", "duel-popup-wrapper");
+
+    const closePopupBtn = document.createElement("i");
+    closePopupBtn.setAttribute("id", "close-popup-btn");
+    closePopupBtn.setAttribute("class", "fa-solid fa-circle-xmark");
+
+    const duelImg = document.createElement("img");
+    duelImg.setAttribute("id", "duel-img");
+    duelImg.src = "assets/contracts/Selene.png";
+
+    const duelRewardWrapper = document.createElement("div");
+    duelRewardWrapper.setAttribute("id", "duel-reward-wrapper");
+
+    const duelRewardTitle = document.createElement("p");
+    duelRewardTitle.setAttribute("id", "duel-reward-title");
+    duelRewardTitle.textContent = "Selene rewards:";
+
+    content.appendChild(duelPopupWrapper);
+    duelPopupWrapper.appendChild(closePopupBtn);
+    duelPopupWrapper.appendChild(duelImg);
+    duelPopupWrapper.appendChild(duelRewardWrapper);
+    duelRewardWrapper.appendChild(duelRewardTitle);
+
+    const duelRewardPentacleAmount = document.createElement("p");
+    duelRewardPentacleAmount.setAttribute("id", "victory-reward-text");
+    duelRewardPentacleAmount.textContent = "1";
+
+    const duelRewardPentacle = document.createElement("img");
+    duelRewardPentacle.setAttribute("id", "victory-reward-img");
+    duelRewardPentacle.src = "assets/img/pentacle.png";
+
+    const duelRewardPotionAmount = document.createElement("p");
+    duelRewardPotionAmount.setAttribute("id", "victory-reward-text");
+    duelRewardPotionAmount.textContent = "1";
+
+    const duelRewardPotion = document.createElement("img");
+    duelRewardPotion.setAttribute("id", "victory-reward-img");
+    duelRewardPotion.src = "assets/img/health-potion.png";
+
+    duelRewardWrapper.appendChild(duelRewardPentacleAmount);
+    duelRewardWrapper.appendChild(duelRewardPentacle);
+    duelRewardWrapper.appendChild(duelRewardPotionAmount);
+    duelRewardWrapper.appendChild(duelRewardPotion);
+
+    const duelBtn = document.createElement("span");
+    duelBtn.setAttribute("id", "duel-play-btn");
+    duelBtn.textContent = "Play";
+
+    duelPopupWrapper.appendChild(duelBtn);
+
+    duelBtn.addEventListener("click", () => {
+        content.removeChild(duelPopupWrapper);
+        duelSelene();
+    });
 }
