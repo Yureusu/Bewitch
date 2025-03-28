@@ -1,6 +1,10 @@
 import { renderSelene } from "./selene.js";
+import { playerInventory, setValue, getValue} from "./inventory.js";
 
 export function renderHome(){
+    console.log({Pentacle: playerInventory.pentacle, Potion: playerInventory.potion, 
+        Crystal: playerInventory.crystal});
+
     const topNav = document.createElement("div");
     topNav.setAttribute("id", "top-nav");
     const howtoPlay = document.createElement("span");
@@ -86,6 +90,10 @@ export function renderHome(){
 
     gameNavContracts.addEventListener("click", () => {
         renderContracts();
+    });
+
+    gameNavShop.addEventListener("click", () => {
+        renderShop();
     });
 
     function renderCatalog(){
@@ -270,6 +278,195 @@ export function renderHome(){
         });
     }
     
+    function renderShop(){
+        topNav.removeChild(howtoPlay);
+        topNav.removeChild(stats);
+        topNav.removeChild(coffee);
+        content.removeChild(tagLineWrapper);
+        content.removeChild(gameNav);
+        content.removeChild(introduction);
+    
+        topNav.style.justifyContent = "flex-start";
+        content.style.height = "100vh";
+    
+        const contractsBackBtn = document.createElement("i");
+        contractsBackBtn.setAttribute("id", "contracts-backbtn");
+        contractsBackBtn.setAttribute("class", "fa-solid fa-chevron-left");
+    
+        const contractsBackText = document.createElement("p");
+        contractsBackText.setAttribute("id", "contracts-backtext");
+        contractsBackText.textContent = "Go back";
+    
+        topNav.appendChild(contractsBackBtn);
+        topNav.appendChild(contractsBackText);
+
+        //Shop
+        const shopWrapper = document.createElement("div");
+        shopWrapper.setAttribute("id", "shop-wrapper");
+
+        content.appendChild(shopWrapper);
+
+        //potion
+        const buyPotionWrapper = document.createElement("div");
+        buyPotionWrapper.setAttribute("id", "buy-potion-wrapper");
+
+        const buyPotionImg = document.createElement("img");
+        buyPotionImg.setAttribute("id", "buy-potion-img");
+        buyPotionImg.src = "assets/img/health-potion.png";
+
+        const buyPotionTitle = document.createElement("p");
+        buyPotionTitle.setAttribute("id", "buy-potion-title");
+        buyPotionTitle.textContent = "Health Potion";
+
+        const buyPotionInfo = document.createElement("p");
+        buyPotionInfo.setAttribute("id", "buy-potion-info");
+        buyPotionInfo.textContent = "A highly sought-after health potion crafted by witches to restore 1 heart.";
+
+        const buyPotionBtn = document.createElement("span");
+        buyPotionBtn.setAttribute("id", "buy-potion-btn");
+        buyPotionBtn.textContent = "Buy";
+
+        //crystal
+        const buyCrystalWrapper = document.createElement("div");
+        buyCrystalWrapper.setAttribute("id", "buy-crystal-wrapper");
+
+        const buyCrystalImg = document.createElement("img");
+        buyCrystalImg.setAttribute("id", "buy-crystal-img");
+        buyCrystalImg.src = "assets/img/witch-crystal.png";
+
+        const buyCrystalTitle = document.createElement("p");
+        buyCrystalTitle.setAttribute("id", "buy-crystal-title");
+        buyCrystalTitle.textContent = "Witch Crystal";
+
+        const buyCrystalInfo = document.createElement("p");
+        buyCrystalInfo.setAttribute("id", "buy-crystal-info");
+        buyCrystalInfo.textContent = "A rare valuable crystal coveted by witches that can reveal a passage.";
+
+        const buyCrystalBtn = document.createElement("span");
+        buyCrystalBtn.setAttribute("id", "buy-crystal-btn");
+        buyCrystalBtn.textContent = "Buy";
+
+        shopWrapper.appendChild(buyPotionWrapper);
+        buyPotionWrapper.appendChild(buyPotionImg);
+        buyPotionWrapper.appendChild(buyPotionTitle);
+        buyPotionWrapper.appendChild(buyPotionInfo);
+        buyPotionWrapper.appendChild(buyPotionBtn);
+
+        shopWrapper.appendChild(buyCrystalWrapper);
+        buyCrystalWrapper.appendChild(buyCrystalImg);
+        buyCrystalWrapper.appendChild(buyCrystalTitle);
+        buyCrystalWrapper.appendChild(buyCrystalInfo);
+        buyCrystalWrapper.appendChild(buyCrystalBtn);
+
+        buyPotionBtn.addEventListener("click", () => {
+            alert("You bought 1 health potion.")
+            if(playerInventory.pentacle != 0){
+                const decPentacle = getValue().pentacle -= 1;
+                const incPotion = getValue().potion += 1;
+        
+                setValue({ 
+                    pentacle: decPentacle,
+                    potion: incPotion
+                 }); 
+
+                console.log({Pentacle: getValue().pentacle, Potion: getValue().potion});
+            }
+            else{
+                alert("Sorry, you don't have enough pentacle.");
+            }
+        });
+
+        buyCrystalBtn.addEventListener("click", () => {
+            alert("Coming Soon.");
+            // if(!(playerInventory.pentacle <= 2)){
+            //     const decPentacle = getValue().pentacle -= 3;
+            //     const incCrystal = getValue().crystal += 1;
+        
+            //     setValue({ 
+            //         pentacle: decPentacle,
+            //         crystal: incCrystal
+            //      }); 
+
+            //     console.log({Pentacle: getValue().pentacle, Crystal: getValue().crystal});
+            // }
+            // else{
+            //     alert("Sorry, you don't have enough pentacle.")
+            // }
+        });
+
+        //
+        contractsBackBtn.addEventListener("click", () => {
+            content.style.height = "auto";
+            content.style.justifyContent = "space-around";
+            content.removeChild(shopWrapper);
+            content.removeChild(topNav);
+            renderHome();
+        });
+        contractsBackText.addEventListener("click", () => {
+            content.style.height = "auto";
+            content.style.justifyContent = "space-around";
+            content.removeChild(shopWrapper);
+            content.removeChild(topNav);
+            renderHome();
+        });
+    }
 }
 
 renderHome();
+
+export function renderPlayerBag(){
+    const playerBag = document.getElementById("player-bag");
+
+    playerBag.addEventListener("click", () => {
+        const content = document.getElementById("content");
+        
+        const playerBagPopupWrapper = document.createElement("div");
+        playerBagPopupWrapper.setAttribute("id", "player-bag-popup-wrapper");
+
+        const closePlayerBagBtn = document.createElement("i");
+        closePlayerBagBtn.setAttribute("id", "close-player-bag-btn");
+        closePlayerBagBtn.setAttribute("class", "fa-solid fa-circle-xmark");
+
+        const pentacleWrapper = document.createElement("div");
+        pentacleWrapper.setAttribute("id", "pentacle-wrapper");
+
+        const pentacleImg = document.createElement("img");
+        pentacleImg.setAttribute("id", "pentacle-img");
+        pentacleImg.src = "assets/img/pentacle.png";
+
+        const pentacleTextAmount =  document.createElement("p");
+        pentacleTextAmount.setAttribute("id", "pentacle-text-amount");
+        pentacleTextAmount.textContent = getValue().pentacle;
+
+        const inventoryWrapper = document.createElement("div");
+        inventoryWrapper.setAttribute("id", "inventory-wrapper");
+
+        const potionArr = [];
+        let potionCounter = getValue().potion;
+        console.log(`Potion Counter: ${potionCounter}`);
+
+        for(let i = 1; i <= potionCounter; i++){
+            potionArr.push(`Potion${i}`);
+        }
+
+        potionArr.forEach(() => {
+            const inventoryPotionImg = document.createElement("img");
+            inventoryPotionImg.setAttribute("id", "inventory-potion-img");
+            inventoryPotionImg.src = "assets/img/health-potion.png";
+            inventoryWrapper.appendChild(inventoryPotionImg);
+        });
+
+        content.appendChild(playerBagPopupWrapper);
+        playerBagPopupWrapper.appendChild(closePlayerBagBtn);
+        playerBagPopupWrapper.appendChild(pentacleWrapper);
+        pentacleWrapper.appendChild(pentacleImg);
+        pentacleWrapper.appendChild(pentacleTextAmount);
+        playerBagPopupWrapper.appendChild(inventoryWrapper);
+
+        closePlayerBagBtn.addEventListener("click", () => {
+            content.removeChild(playerBagPopupWrapper);
+        });
+    });
+}
+
+renderPlayerBag();

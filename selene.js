@@ -1,6 +1,8 @@
 import { renderHome } from "./script.js";
+import { playerInventory, getValue, setValue} from "./inventory.js";
 
 export function renderSelene(){
+    console.log(`Potions: ${getValue().potion}`);
     renderHome();
 
     const content = document.getElementById("content");
@@ -371,7 +373,14 @@ function victoryPopup(){
     victoryPopupWrapper.appendChild(victoryText);
 
     closePopupBtn.addEventListener("click", () => {
-        location.reload();
+        content.removeChild(victoryPopupWrapper);
+        player.health = 10;
+        updateHealth();
+        player.round = 1;
+        updateRound();
+        player.prompt = "Open a card. Finish 10 rounds to beat Selene.";
+        updatePrompt();
+        renderSelene();
     });
 }
 
@@ -403,15 +412,18 @@ function defeatPopup(){
     defeatPopupWrapper.appendChild(defeatText);
 
     closePopupBtn.addEventListener("click", () => {
-        location.reload();
+        player.health = 10;
+        updateHealth();
+        player.round = 1;
+        updateRound();
+        player.prompt = "Open a card. Finish 10 rounds to beat Selene.";
+        updatePrompt();
+        renderSelene();
     });
 }
 
-const bagCounter = {
-    potion: 20
-}
-
 function renderBag(){
+    console.log(getValue().potion);
     const bagWrapper = document.createElement("div");
     bagWrapper.setAttribute("id", "bag-wrapper");
 
@@ -425,21 +437,20 @@ function renderBag(){
     bagWrapper.appendChild(bagImg);
 
     const potionArr = [];
+    let potionCounter = getValue().potion;
+    console.log(`Potion Counter: ${potionCounter}`);
 
-    Object.keys(bagCounter).forEach(key => {
-        const numberOfPotion = bagCounter[key];
-        for(let i = 1; i <= numberOfPotion; i++){
-            potionArr.push(`Potion${i}`);
-        }
-    });
+    for(let i = 1; i <= potionCounter; i++){
+        potionArr.push(`Potion${i}`);
+    }
 
-    console.log(potionArr);
+    console.log(`Potion array: ${potionArr}`);
 
     const healthPotionWrapper = document.createElement("div");
     healthPotionWrapper.setAttribute("id", "health-potion-wrapper");
     bagWrapper.appendChild(healthPotionWrapper);
 
-    if(bagCounter.potion != 0){
+    if(potionCounter != 0){
         potionArr.forEach((index) => {
             const healthPotion = document.createElement("div");
             healthPotion.setAttribute("id", "health-potion");
@@ -476,17 +487,26 @@ function renderBag(){
                     updateRound();
                     player.prompt = "Health Potion: Gain 1 heart.";
                     updatePrompt();
+                    const decPotion = getValue().potion -= 1;
+                    const readPentacle = getValue().pentacle;
+                    setValue({
+                        pentacle: readPentacle,
+                        potion: decPotion
+                    });
+                    console.log({Potion: playerInventory.potion})
                     const deletePotion = potionArr[0];
                     healthPotion.remove(deletePotion);
+
+                    if(getValue().potion == 0){
+                        bagWrapper.removeChild(healthPotionWrapper);
+                        const bagText = document.createElement("p");
+                        bagText.setAttribute("id", "bag-text");
+                        bagText.textContent = "Your bag is empty.";
+                
+                        bagWrapper.appendChild(bagText);
+                    }
                 });
             });
         });
-    }
-    else{
-        const bagText = document.createElement("p");
-        bagText.setAttribute("id", "bag-text");
-        bagText.textContent = "Your bag is empty.";
-
-        bagWrapper.appendChild(bagText);
     }
 }

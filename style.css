@@ -57,6 +57,17 @@
 #header-space{
     flex: 1;
 }
+#player-bag{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+    filter: brightness(90%);
+}
+#player-bag:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
 #light-mode, #dark-mode{
     height: 48px;
     width: 48px;
@@ -340,6 +351,154 @@
     filter: brightness(100%);
     transition: 0.3s ease-in-out;
 }
+/*Shop*/
+#shop-wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-block: 24px;
+    padding-inline: 24px;
+    animation: fadeIn 0.6s ease forwards;
+    gap: 24px;
+}
+#buy-potion-wrapper, #buy-crystal-wrapper{
+    height: auto;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    animation: fadeIn 0.6s ease forwards;
+    border: 2px solid white;
+    border-radius: 12px;
+    gap: 12px;
+}
+#buy-potion-img, #buy-crystal-img{
+    height: 140px;
+    width: 140px;
+    cursor: pointer;
+    filter: brightness(80%);
+    animation: fadeIn 0.6s ease forwards;
+}
+#buy-potion-img:hover, #buy-crystal-img:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+#buy-potion-title, #buy-crystal-title{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    animation: fadeIn 0.6s ease forwards;
+}
+#buy-potion-info, #buy-crystal-info{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    animation: fadeIn 0.6s ease forwards;
+    text-align: center;
+    font-style: italic;
+}
+#buy-potion-btn, #buy-crystal-btn{
+    background-color: var(--header-color);
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 24px;
+    width: 100px;
+    text-align: center;
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#buy-potion-btn:hover, #buy-crystal-btn:hover{
+    background-color: var(--light-bgcolor);
+    color: var(--header-color);
+    transition: 0.3s ease-in-out;
+}
+/*player bag*/
+#player-bag-popup-wrapper{
+    height: 420px;
+    width: 420px;
+    background-color: var(--header-color);
+    border: 2px solid var(--light-bgcolor);
+    z-index: 999;
+    border-radius: 12px 0px 12px 12px;
+    padding: 24px;
+    position: absolute;
+    top: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 0px 100vmax rgb(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease forwards;
+}
+#pentacle-wrapper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--header-color);
+    padding-bottom: 12px;
+    gap: 12px;
+    border-bottom: 2px solid var(--light-bgcolor);
+    animation: fadeIn 0.6s ease forwards;
+}
+#pentacle-img{
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#pentacle-text-amount{
+    color: var(--light-bgcolor);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#inventory-wrapper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px;
+    gap: 12px;
+    border: 2px solid var(--header-color);
+    border-radius: 12px;
+    flex-wrap: wrap;
+    animation: fadeIn 0.6s ease forwards;
+}
+#inventory-potion-img{
+    height: 58px;
+    width: 58px;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
+}
+#close-player-bag-btn{
+    font-size: 32px;
+    color: var(--light-bgcolor);
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-top: -34px;
+    margin-right: -34px;
+    cursor: pointer;
+    filter: brightness(80%);
+    animation: fadeIn 0.6s ease forwards;
+}
+#close-player-bag-btn:hover{
+    filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
 /*battle*/
 #play-field{
     height: auto;
@@ -512,7 +671,7 @@
     border-radius: 12px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     padding: 12px;
     gap: 24px;

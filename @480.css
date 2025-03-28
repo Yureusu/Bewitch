@@ -13,6 +13,11 @@
     #header-title{
         font-size: 28px;
     }
+    #player-bag{
+        height: 28px;
+        width: 28px;
+        filter: brightness(100%);
+    }
     #light-mode, #dark-mode{
         height: 28px;
         width: 28px;
@@ -245,5 +250,70 @@
     #health-potion-img{
         height: 56px;
         width: 56px;
+    }
+    #shop-wrapper{
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-block: 12px;
+        padding-inline: 12px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    #buy-potion-wrapper, #buy-crystal-wrapper{
+        width: 140px;
+    }
+    #buy-potion-img, #buy-crystal-img{
+        height: 80px;
+        width: 80px;
+        filter: brightness(100%);
+    }
+    #buy-potion-title, #buy-crystal-title{
+        font-size: var(--small-font-size);
+    }
+    #buy-potion-info, #buy-crystal-info{
+        font-size: var(--small-font-size);
+    }
+    #buy-potion-btn, #buy-crystal-btn{
+        background-color: var(--header-color);
+        padding: 6px;
+        margin-top: 0px;
+        border-radius: 24px;
+        width: 80px;
+        font-size: 12px;
+    }
+    #player-bag-popup-wrapper{
+        height: 240px;
+        width: 240px;
+        z-index: 999;
+        padding: 12px;
+        top: 112px;
+    }
+    #pentacle-img{
+        height: 24px;
+        width: 24px;
+    }
+    #pentacle-text-amount{
+        font-size: var(--small-font-size);
+    }
+    #inventory-potion-img{
+        height: 42px;
+        width: 42px;
+    }
+    #close-player-bag-btn{
+        font-size: 24px;
+        color: var(--light-bgcolor);
+        align-self: flex-end;
+        justify-self: flex-start;
+        margin-top: -20px;
+        margin-right: -20px;
+        cursor: pointer;
+        filter: brightness(80%);
+        animation: fadeIn 0.6s ease forwards;
+    }
+    #close-player-bag-btn:hover{
+        filter: brightness(100%);
+        transition: 0.3s ease-in-out;
     }
 }
