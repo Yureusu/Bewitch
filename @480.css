@@ -284,8 +284,8 @@
         font-size: 12px;
     }
     #player-bag-popup-wrapper{
-        height: 240px;
-        width: 240px;
+        height: 300px;
+        width: 300px;
         z-index: 999;
         padding: 12px;
         top: 112px;
