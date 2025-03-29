@@ -471,8 +471,10 @@ function defeatPopup(){
 
     if(!(getValue().pentacle == 0)){
         const decPentacle = getValue().pentacle -= 1;
+        const readPotion = getValue().potion;
         setValue({
-            pentacle: decPentacle
+            pentacle: decPentacle,
+            potion: readPotion
         });
     }
 

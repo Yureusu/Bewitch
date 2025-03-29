@@ -600,13 +600,6 @@
     transform-style: preserve-3d;
     transition: 0.6s ease;
 }
-#sage-card-wrapper{
-    height: 240px;
-    width: 180px;
-    border-radius: 12px;
-    cursor: pointer;
-    animation: fadeIn 0.6s ease forwards;
-}
 #front-face, #back-face{
     height: 100%;
     width: 100%;
@@ -630,6 +623,13 @@
     height: 320px;
     width: 240px;
     border-radius: 12px;
+}
+#sage-card-wrapper{
+    height: 240px;
+    width: 180px;
+    border-radius: 12px;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
 }
 #sage-backface-img{
     height: 240px;

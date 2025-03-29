@@ -218,16 +218,21 @@
         width: 132px;
     }
     #sage-card-wrapper{
-        height: 120px;
-        width: 86px;
+        height: 180px;
+        width: 132px;
+        border-radius: 12px;
+        cursor: pointer;
+        animation: fadeIn 0.6s ease forwards;
     }
     #sage-backface-img{
-        height: 120px;
-        width: 86px;
+        height: 180px;
+        width: 132px;
+        border-radius: 12px;
     }
     #sage-frontface-img{
-        height: 120px;
-        width: 86px;
+        height: 180px;
+        width: 132px;
+        border-radius: 12px;
     }
     #player-info{
         padding-inline: 12px;
