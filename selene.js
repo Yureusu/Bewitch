@@ -625,6 +625,7 @@ function duelPopup(){
     const duelBtn = document.createElement("span");
     duelBtn.setAttribute("id", "duel-play-btn");
     duelBtn.textContent = "Play";
+    duelBtn.style.width = "100px";
 
     duelPopupWrapper.appendChild(duelBtn);
 

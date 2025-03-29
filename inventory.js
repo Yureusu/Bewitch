@@ -1,8 +1,9 @@
 
 export let playerInventory = {
-    pentacle: 2, 
-    potion: 20,
-    crystal: 0
+    pentacle: 12, 
+    potion: 2,
+    crystal: 0,
+    sageLock: false
 }
 
 export function getValue() {

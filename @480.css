@@ -217,6 +217,18 @@
         height: 180px;
         width: 132px;
     }
+    #sage-card-wrapper{
+        height: 120px;
+        width: 86px;
+    }
+    #sage-backface-img{
+        height: 120px;
+        width: 86px;
+    }
+    #sage-frontface-img{
+        height: 120px;
+        width: 86px;
+    }
     #player-info{
         padding-inline: 12px;
     }
@@ -331,7 +343,7 @@
         width: 300px;
         z-index: 999;
         padding: 12px;
-        top: 112px;
+        top: 132px;
     }
     #pentacle-img{
         height: 24px;

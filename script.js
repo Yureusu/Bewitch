@@ -1,4 +1,5 @@
 import { renderSelene } from "./selene.js";
+import { renderSage } from "./sage.js";
 import { playerInventory, setValue, getValue} from "./inventory.js";
 
 export function renderHome(){
@@ -446,7 +447,8 @@ export function renderContracts(){
                 renderSelene();
             }
             else if(targetWitch === "Sage"){
-                alert(`You clicked: ${witchesName[item]}`);
+                content.removeChild(witchWrapper);
+                renderSage();
             }
             else if(targetWitch === "Willow"){
                 alert(`You clicked: ${witchesName[item]}`);
