@@ -460,9 +460,13 @@ function victoryPopup(){
 
     const incPentacle = getValue().pentacle += 3;
     const incPotion = getValue().potion += 1;
+    const readCrystal = getValue().crystal;
+    const readSageLock = getValue().sageLock;
     setValue({
         pentacle: incPentacle,
-        potion: incPotion
+        potion: incPotion,
+        crystal: readCrystal,
+        sageLock: readSageLock
     });
 
     closePopupBtn.addEventListener("click", () => {
@@ -527,9 +531,13 @@ function defeatPopup(){
     if(!(getValue().pentacle == 0)){
         const decPentacle = getValue().pentacle -= 3;
         const readPotion = getValue().potion;
+        const readCrystal = getValue().crystal;
+        const readSageLock = getValue().sageLock;
         setValue({
             pentacle: decPentacle,
-            potion: readPotion
+            potion: readPotion,
+            crystal: readCrystal,
+            sageLock: readSageLock
         });
     }
 
@@ -609,11 +617,15 @@ function renderBag(){
                     updateRound();
                     player.prompt = "Health Potion: Gain 1 heart.";
                     updatePrompt();
-                    const decPotion = getValue().potion -= 1;
                     const readPentacle = getValue().pentacle;
+                    const decPotion = getValue().potion -= 1;
+                    const readCrystal = getValue().crystal;
+                    const readSageLock = getValue().sageLock;
                     setValue({
                         pentacle: readPentacle,
-                        potion: decPotion
+                        potion: decPotion,
+                        crystal: readCrystal,
+                        sageLock: readSageLock
                     });
                     console.log({Potion: playerInventory.potion})
                     const deletePotion = potionArr[0];
@@ -684,9 +696,7 @@ function duelPopup(){
     });
 
     console.log(getValue().sageLock);
-
     let contractKey = getValue().sageLock;
-
     isUnlocked(contractKey);
 }
 
@@ -710,21 +720,23 @@ function isUnlocked(key){
     if(key == false){
         duelPopupWrapper.appendChild(duelLockedBtn);
         duelLockedBtn.addEventListener("click", () => {
-            if(getValue().sageLock == false && getValue().pentacle >= 10){
+            if(key == false && getValue().pentacle >= 10){
                 const decPentacle = getValue().pentacle -= 10;
                 const updateSage = getValue().sageLock = true;
+                const readPotion = getValue().potion;
+                const readCrystal = getValue().crystal;
                 setValue({
                     pentacle: decPentacle,
-                    potion: getValue().potion,
-                    crystal: getValue().crystal,
+                    potion: readPotion,
+                    crystal: readCrystal,
                     sageLock: updateSage
                 });
-                console.log(getValue().sageLock);
+                console.log(`sageLock:${key}`);
                 alert("Sage Unlocked.");
                 content.removeChild(duelPopupWrapper);
                 duelSage();
             }   
-            else if(getValue().sageLock == false && getValue().pentacle <= 10){
+            else if(key == false && getValue().pentacle <= 10){
                 alert("You don't have enough Pentacle.");
             }
         });

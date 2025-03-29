@@ -388,4 +388,7 @@
         filter: brightness(100%);
         transition: 0.3s ease-in-out;
     }
+    #bag-text{
+        font-size: var(--small-font-size);
+    }
 }
