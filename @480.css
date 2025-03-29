@@ -185,7 +185,7 @@
     #duel-reward-title{
         font-size: var(--normal-font-size);
     }
-    #duel-play-btn, #duel-locked-btn, #duel-unlocked-btn{
+    #duel-play-btn, #duel-locked-btn{
         font-size: 12px;
         padding: 8px;
         width: 80px;
