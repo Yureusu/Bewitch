@@ -508,7 +508,7 @@ function defeatPopup(){
 
     const defeatRewardPentacleAmount = document.createElement("p");
     defeatRewardPentacleAmount.setAttribute("id", "defeat-reward-text");
-    defeatRewardPentacleAmount.textContent = "1"; 
+    defeatRewardPentacleAmount.textContent = "3"; 
 
     const defeatRewardPentacle = document.createElement("img");
     defeatRewardPentacle.setAttribute("id", "defeat-reward-img");
@@ -525,7 +525,7 @@ function defeatPopup(){
     defeatRewardWrapper.appendChild(defeatRewardPentacle);
 
     if(!(getValue().pentacle == 0)){
-        const decPentacle = getValue().pentacle -= 1;
+        const decPentacle = getValue().pentacle -= 3;
         const readPotion = getValue().potion;
         setValue({
             pentacle: decPentacle,

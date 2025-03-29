@@ -185,13 +185,25 @@
     #duel-reward-title{
         font-size: var(--normal-font-size);
     }
-    #duel-play-btn, #duel-locked-btn{
+    #duel-play-btn, #duel-unlocked-btn{
         font-size: 12px;
         padding: 8px;
         width: 80px;
         text-align: center;
         border-radius: 24px;
         cursor: pointer;
+    }
+    #duel-locked-btn{
+        font-size: 12px;
+        padding: 8px;
+        width: auto;
+        text-align: center;
+        border-radius: 24px;
+        cursor: pointer;
+    }
+    #duel-btn-price{
+        height: 18px;
+        width: 18px;
     }
     /*battle*/
     #play-field{

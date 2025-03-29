@@ -342,10 +342,6 @@ export function renderPlayerBag(){
         pentacleImg.setAttribute("id", "pentacle-img");
         pentacleImg.src = "assets/img/pentacle.png";
 
-        const pentacleTextAmount =  document.createElement("p");
-        pentacleTextAmount.setAttribute("id", "pentacle-text-amount");
-        pentacleTextAmount.textContent = getValue().pentacle;
-
         const inventoryWrapper = document.createElement("div");
         inventoryWrapper.setAttribute("id", "inventory-wrapper");
 
@@ -372,12 +368,25 @@ export function renderPlayerBag(){
         playerBagPopupWrapper.appendChild(closePlayerBagBtn);
         playerBagPopupWrapper.appendChild(pentacleWrapper);
         pentacleWrapper.appendChild(pentacleImg);
-        pentacleWrapper.appendChild(pentacleTextAmount);
         playerBagPopupWrapper.appendChild(inventoryWrapper);
 
         closePlayerBagBtn.addEventListener("click", () => {
             content.removeChild(playerBagPopupWrapper);
         });
+
+        let playerPentacle = getValue().pentacle;
+        if(playerPentacle <= 0){
+            const pentacleTextAmount =  document.createElement("p");
+            pentacleTextAmount.setAttribute("id", "pentacle-text-amount");
+            pentacleTextAmount.textContent = "0";
+            pentacleWrapper.appendChild(pentacleTextAmount);
+        }
+        else{
+            const pentacleTextAmount =  document.createElement("p");
+            pentacleTextAmount.setAttribute("id", "pentacle-text-amount");
+            pentacleTextAmount.textContent = playerPentacle;
+            pentacleWrapper.appendChild(pentacleTextAmount);
+        }
     });
 }
 
