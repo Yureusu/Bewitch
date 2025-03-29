@@ -421,7 +421,7 @@ function victoryPopup(){
 
     const victoryText = document.createElement("p");
     victoryText.setAttribute("id", "victory-text");
-    victoryText.textContent = `Selene has been defeated. You won!`;
+    victoryText.textContent = `Sage has been defeated. You won!`;
 
     const victoryRewardWrapper = document.createElement("div");
     victoryRewardWrapper.setAttribute("id", "victory-reward-wrapper");
@@ -508,7 +508,7 @@ function defeatPopup(){
     
     const defeatRewardText = document.createElement("p");
     defeatRewardText.setAttribute("id", "defeat-reward-text");
-    defeatRewardText.textContent = `Selene took: `;    
+    defeatRewardText.textContent = `Sage took: `;    
 
     const defeatRewardPentacleAmount = document.createElement("p");
     defeatRewardPentacleAmount.setAttribute("id", "defeat-reward-text");
