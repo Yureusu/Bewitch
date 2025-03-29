@@ -440,7 +440,7 @@ function victoryPopup(){
 
     const victoryRewardPotionAmount = document.createElement("p");
     victoryRewardPotionAmount.setAttribute("id", "victory-reward-text");
-    victoryRewardPotionAmount.textContent = "1"; 
+    victoryRewardPotionAmount.textContent = "3"; 
 
     const victoryRewardPotion = document.createElement("img");
     victoryRewardPotion.setAttribute("id", "victory-reward-img");
@@ -459,7 +459,7 @@ function victoryPopup(){
     victoryRewardWrapper.appendChild(victoryRewardPotion);
 
     const incPentacle = getValue().pentacle += 3;
-    const incPotion = getValue().potion += 1;
+    const incPotion = getValue().potion += 3;
     const readCrystal = getValue().crystal;
     const readSageLock = getValue().sageLock;
     setValue({
@@ -512,7 +512,7 @@ function defeatPopup(){
 
     const defeatRewardPentacleAmount = document.createElement("p");
     defeatRewardPentacleAmount.setAttribute("id", "defeat-reward-text");
-    defeatRewardPentacleAmount.textContent = "3"; 
+    defeatRewardPentacleAmount.textContent = "1"; 
 
     const defeatRewardPentacle = document.createElement("img");
     defeatRewardPentacle.setAttribute("id", "defeat-reward-img");
@@ -529,7 +529,7 @@ function defeatPopup(){
     defeatRewardWrapper.appendChild(defeatRewardPentacle);
 
     if(!(getValue().pentacle == 0)){
-        const decPentacle = getValue().pentacle -= 3;
+        const decPentacle = getValue().pentacle -= 1;
         const readPotion = getValue().potion;
         const readCrystal = getValue().crystal;
         const readSageLock = getValue().sageLock;
@@ -680,7 +680,7 @@ function duelPopup(){
 
     const duelRewardPotionAmount = document.createElement("p");
     duelRewardPotionAmount.setAttribute("id", "victory-reward-text");
-    duelRewardPotionAmount.textContent = "1";
+    duelRewardPotionAmount.textContent = "3";
 
     const duelRewardPotion = document.createElement("img");
     duelRewardPotion.setAttribute("id", "victory-reward-img");
