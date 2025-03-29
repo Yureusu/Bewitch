@@ -1,6 +1,6 @@
 
 export let playerInventory = {
-    pentacle: 12, 
+    pentacle: 2, 
     potion: 2,
     crystal: 0,
     sageLock: false
