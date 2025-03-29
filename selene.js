@@ -1,4 +1,4 @@
-import { renderHome } from "./script.js";
+import { renderHome, renderContracts} from "./script.js";
 import { playerInventory, getValue, setValue} from "./inventory.js";
 
 export function renderSelene(){
@@ -89,20 +89,22 @@ export function renderSelene(){
     });
 
     catalogBackBtn.addEventListener("click", () => {
-        content.style.height = "auto";
+        content.style.height = "100vh";
         content.style.justifyContent = "space-around";
         content.removeChild(contractWrapper);
         content.removeChild(contractCardsWrapper);
-        content.removeChild(topNav);
-        renderHome();
+        topNav.removeChild(catalogBackBtn);
+        topNav.removeChild(catalogBackText);
+        renderContracts();
     });
     catalogBackText.addEventListener("click", () => {
-        content.style.height = "auto";
+        content.style.height = "100vh";
         content.style.justifyContent = "space-around";
         content.removeChild(contractWrapper);
         content.removeChild(contractCardsWrapper);
-        content.removeChild(topNav);
-        renderHome();
+        topNav.removeChild(catalogBackBtn);
+        topNav.removeChild(catalogBackText);
+        renderContracts();
     });
 }
 
@@ -629,5 +631,9 @@ function duelPopup(){
     duelBtn.addEventListener("click", () => {
         content.removeChild(duelPopupWrapper);
         duelSelene();
+    });
+
+    closePopupBtn.addEventListener("click", () => {
+        content.removeChild(duelPopupWrapper);
     });
 }

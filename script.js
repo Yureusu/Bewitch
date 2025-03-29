@@ -89,6 +89,12 @@ export function renderHome(){
     });
 
     gameNavContracts.addEventListener("click", () => {
+        topNav.removeChild(howtoPlay);
+        topNav.removeChild(stats);
+        topNav.removeChild(coffee);
+        content.removeChild(tagLineWrapper);
+        content.removeChild(gameNav);
+        content.removeChild(introduction);
         renderContracts();
     });
 
@@ -174,105 +180,6 @@ export function renderHome(){
         catalogBackText.addEventListener("click", () => {
             content.style.height = "auto";
             content.removeChild(spellWrapper);
-            content.removeChild(topNav);
-            renderHome();
-        });
-    }
-    
-    function renderContracts(){
-        topNav.removeChild(howtoPlay);
-        topNav.removeChild(stats);
-        topNav.removeChild(coffee);
-        content.removeChild(tagLineWrapper);
-        content.removeChild(gameNav);
-        content.removeChild(introduction);
-    
-        topNav.style.justifyContent = "flex-start";
-        content.style.height = "100vh";
-    
-        const contractsBackBtn = document.createElement("i");
-        contractsBackBtn.setAttribute("id", "contracts-backbtn");
-        contractsBackBtn.setAttribute("class", "fa-solid fa-chevron-left");
-    
-        const contractsBackText = document.createElement("p");
-        contractsBackText.setAttribute("id", "contracts-backtext");
-        contractsBackText.textContent = "Go back";
-    
-        topNav.appendChild(contractsBackBtn);
-        topNav.appendChild(contractsBackText);
-    
-        //adding witches
-        const witchImgs = [
-            "assets/contracts/Selene.png", "assets/contracts/Sage.png", "assets/contracts/Willow.png", 
-            "assets/contracts/Lilith.png", "assets/contracts/Aspen.png", "assets/contracts/Demise.png",
-        ];
-
-        const witchesName = [
-            "Selene", "Sage", "Willow", "Lilith", "Aspen", "Demise"
-        ];
-
-        content.style.justifyContent = "flex-start";
-
-        const witchWrapper = document.createElement("div");
-        witchWrapper.setAttribute("id", "witch-wrapper");
-
-        content.appendChild(witchWrapper);
-
-        witchImgs.forEach((index, item) => {
-            const witchImgWrapper = document.createElement("div");
-            witchImgWrapper.setAttribute("id", "witchimg-wrapper");
-
-            const witchImg = document.createElement("img");
-            witchImg.setAttribute("id", "witch-img");
-            witchImg.src = index;
-            witchImg.setAttribute("name", `${witchesName[item]}`);
-
-            const witchName = document.createElement("p");
-            witchName.setAttribute("id", "witch-name");
-            witchName.textContent = `${witchesName[item]}`;
-
-            witchWrapper.appendChild(witchImgWrapper);
-            witchImgWrapper.appendChild(witchImg);
-            witchImgWrapper.appendChild(witchName);
-
-            witchImg.addEventListener("click", (event) => {
-                const targetWitch = event.target.getAttribute("name");
-                if(targetWitch === "Selene"){
-                    content.removeChild(witchWrapper);
-                    renderSelene();
-                }
-                else if(targetWitch === "Sage"){
-                    alert(`You clicked: ${witchesName[item]}`);
-                }
-                else if(targetWitch === "Willow"){
-                    alert(`You clicked: ${witchesName[item]}`);
-                }
-                else if(targetWitch === "Lilith"){
-                    alert(`You clicked: ${witchesName[item]}`);
-                }
-                else if(targetWitch === "Aspen"){
-                    alert(`You clicked: ${witchesName[item]}`);
-                }
-                else if(targetWitch === "Demise"){
-                    alert(`You clicked: ${witchesName[item]}`);
-                }
-                else{
-                    alert(`There's no witch with that name.`);
-                }
-            });
-        });
-    
-        contractsBackBtn.addEventListener("click", () => {
-            content.style.height = "auto";
-            content.style.justifyContent = "space-around";
-            content.removeChild(witchWrapper);
-            content.removeChild(topNav);
-            renderHome();
-        });
-        contractsBackText.addEventListener("click", () => {
-            content.style.height = "auto";
-            content.style.justifyContent = "space-around";
-            content.removeChild(witchWrapper);
             content.removeChild(topNav);
             renderHome();
         });
@@ -474,3 +381,103 @@ export function renderPlayerBag(){
 }
 
 renderPlayerBag();
+
+export function renderContracts(){
+    const topNav = document.getElementById("top-nav");
+    const content = document.getElementById("content");
+    const howtoPlay = document.getElementById("howto-play");
+    const stats = document.getElementById("stats");
+    const coffee = document.getElementById("coffee");
+    const tagLineWrapper = document.getElementById("tagline-wrapper");
+    const gameNav = document.getElementById("game-nav");
+    const introduction = document.getElementById("introduction");
+
+    topNav.style.justifyContent = "flex-start";
+    content.style.height = "100vh";
+    content.style.justifyContent = "flex-start";
+
+    const contractsBackBtn = document.createElement("i");
+    contractsBackBtn.setAttribute("id", "contracts-backbtn");
+    contractsBackBtn.setAttribute("class", "fa-solid fa-chevron-left");
+
+    const contractsBackText = document.createElement("p");
+    contractsBackText.setAttribute("id", "contracts-backtext");
+    contractsBackText.textContent = "Go back";
+
+    topNav.appendChild(contractsBackBtn);
+    topNav.appendChild(contractsBackText);
+
+    //adding witches
+    const witchImgs = [
+        "assets/contracts/Selene.png", "assets/contracts/Sage.png", "assets/contracts/Willow.png", 
+        "assets/contracts/Lilith.png", "assets/contracts/Aspen.png", "assets/contracts/Demise.png",
+    ];
+
+    const witchesName = [
+        "Selene", "Sage", "Willow", "Lilith", "Aspen", "Demise"
+    ];
+
+    const witchWrapper = document.createElement("div");
+    witchWrapper.setAttribute("id", "witch-wrapper");
+
+    content.appendChild(witchWrapper);
+
+    witchImgs.forEach((index, item) => {
+        const witchImgWrapper = document.createElement("div");
+        witchImgWrapper.setAttribute("id", "witchimg-wrapper");
+
+        const witchImg = document.createElement("img");
+        witchImg.setAttribute("id", "witch-img");
+        witchImg.src = index;
+        witchImg.setAttribute("name", `${witchesName[item]}`);
+
+        const witchName = document.createElement("p");
+        witchName.setAttribute("id", "witch-name");
+        witchName.textContent = `${witchesName[item]}`;
+
+        witchWrapper.appendChild(witchImgWrapper);
+        witchImgWrapper.appendChild(witchImg);
+        witchImgWrapper.appendChild(witchName);
+
+        witchImg.addEventListener("click", (event) => {
+            const targetWitch = event.target.getAttribute("name");
+            if(targetWitch === "Selene"){
+                content.removeChild(witchWrapper);
+                renderSelene();
+            }
+            else if(targetWitch === "Sage"){
+                alert(`You clicked: ${witchesName[item]}`);
+            }
+            else if(targetWitch === "Willow"){
+                alert(`You clicked: ${witchesName[item]}`);
+            }
+            else if(targetWitch === "Lilith"){
+                alert(`You clicked: ${witchesName[item]}`);
+            }
+            else if(targetWitch === "Aspen"){
+                alert(`You clicked: ${witchesName[item]}`);
+            }
+            else if(targetWitch === "Demise"){
+                alert(`You clicked: ${witchesName[item]}`);
+            }
+            else{
+                alert(`There's no witch with that name.`);
+            }
+        });
+    });
+
+    contractsBackBtn.addEventListener("click", () => {
+        content.style.height = "auto";
+        content.style.justifyContent = "space-around";
+        content.removeChild(witchWrapper);
+        content.removeChild(topNav);
+        renderHome();
+    });
+    contractsBackText.addEventListener("click", () => {
+        content.style.height = "auto";
+        content.style.justifyContent = "space-around";
+        content.removeChild(witchWrapper);
+        content.removeChild(topNav);
+        renderHome();
+    });
+}
